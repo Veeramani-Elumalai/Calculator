@@ -3,34 +3,45 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(78, 78, 78);
+}
+
+.result{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(255, 123, 0);
+    width: 360px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+
+#calculator{
+    background-color: black;
+    border-radius: 10px;
 }
 
 #container{
     display:flex;
-    align-items: center;
     flex-direction: row;
     color: black;
-    flex-wrap: wrap;
-    background-color: black;
-    border-radius: 10px;    
 }   
 
-
-
-
-#rightContainer{
+.rightContainer{
     display: flex;
     flex-direction: column;
 }
 
-#numContainer{
+.leftContainer{
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
+    width:320px;
+    justify-content: center;
 }
 
-#numContainer button{
-   color: orange;
+.leftContainer button{
+   color: rgb(255, 123, 0);
    background-color: rgb(44, 43, 43);
    border-radius: 50%;
    padding: 24px;
@@ -38,20 +49,22 @@ body{
    font-size: 20px;
 }
 
-#rightContainer button{
-   color: orange;
+.rightContainer button{
+   color: rgb(255, 123, 0);
    background-color: rgb(44, 43, 43);
    border-radius: 50%;
    padding: 24px;
    margin: 1rem;
    font-size: 20px;
+   margin-left: 0px;
 }
 
-#topContainer button{
-   color: orange;
-   background-color: rgb(44, 43, 43);
-   border-radius: 50%;
-   padding: 24px;
-   margin: 1rem;
-   font-size: 20px;
-}    
+#clear{
+    background-color: rgb(255, 123, 0);
+    color:black;
+}
+
+#equal{
+    background-color: rgb(255, 123, 0);
+    color:black;   
+}
