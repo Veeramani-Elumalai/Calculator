@@ -6,12 +6,13 @@ body{
     background-color: rgb(78, 78, 78);
 }
 
-.result{
+#display{
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     background-color: rgb(255, 123, 0);
     width: 360px;
-    height: 60px;
+    font-size: 60px;
     border-radius: 10px;
     margin: 20px;
     margin-bottom: 10px;
