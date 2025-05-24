@@ -1,49 +1,27 @@
-function add(n1 , n2){
-    return n1 + n2 ;
-}
+let display = document.getElementById("display");
+let displayValue = "";
 
-function sub(n1 , n2){
-    return n1 - n2;
-}
+const buttons = document.querySelectorAll("button");
 
-function multiply(n1 , n2){
-    return n1 * n2;
-}
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const value = button.textContent;
 
-function divide(n1 , n2){
-    if (n2 === 0) return "Error: Cannot divide by zero";
-    return n1 / n2;
-}
-
-function operate(operator, n1, n2){
-    if (operator == "+"){
-        return add(n1 , n2);
-    }else if(operator == "-"){
-        return sub(n1 , n2);
-    }else if(operator == "*"){
-        return multiply(n1 ,n2);
-    }else if(operator == "/"){
-        return divide(n1 , n2);
-    }else{
-        alert("Enter a valid operator...");
-        return null;
-    }
-}
-
-while (true){
-    let n1 = parseFloat(prompt("Enter n1 :"));
-    let n2 = parseFloat(prompt("Enter n2 :"));
-    let operator = prompt("Enter the operation (+, -, *, /) :");
-
-    if (operator === "exit") {
-        alert("Calculator closed.");
-        break;
-    }
-
-    let result = operate(operator, n1, n2);
-
-    if (result !== null) {
-        alert("Result: " + result);
-        console.log("Result:", result);
-    }
-}
+        if (value === "C"){
+            displayValue = "";
+        }else if (value === "⌫") {
+            displayValue = displayValue.slice(0, -1);
+        }else if (value === "=") {
+            try {
+                // Replace 'x' with '*' for JS eval
+                let expression = displayValue.replace(/x/g, '*');
+                displayValue = eval(expression).toString();
+            } catch {
+                displayValue = "Error";
+            }
+        }else {
+            displayValue += value;
+        }
+        display.textContent = displayValue;
+    });
+});
